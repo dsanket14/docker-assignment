@@ -1,0 +1,81 @@
+version: '3.3'
+
+services:
+  eureka-server:
+    image: docker.io/sanketdes/service-registry
+    ports:
+      - "8761:8761"
+    networks:
+      - my-network
+
+  api-gateway:
+    image: docker.io/sanketdes/api-gateway
+    ports:
+      - "9191:9191"
+    networks:
+      - my-network
+    depends_on:
+      - eureka-server
+    environment:
+      - server.port=9191
+      - eureka.client.serviceUrl.defaultZone=http://eureka-server:8761/eureka/
+
+  user-service:
+    image: docker.io/sanketdes/user-service
+    ports:
+      - "9090:9090"
+    networks:
+      - my-network
+    depends_on:
+      - eureka-server
+    environment:
+      - server.port=9090
+      - eureka.client.serviceUrl.defaultZone=http://eureka-server:8761/eureka/
+      - eureka.instance.hostname=user-service
+      - restaurant.endpoint=http://restaurant-service:9091/api/restaurants/name/
+
+  restaurant-service:
+    image: docker.io/sanketdes/restaurant-service
+    ports:
+      - "9091:9091"
+    networks:
+      - my-network
+    depends_on:
+      - eureka-server
+    environment:
+      - server.port=9091
+      - eureka.client.serviceUrl.defaultZone=http://eureka-server:8761/eureka/
+      - eureka.instance.hostname=restaurant-service
+
+  order-service:
+    image: docker.io/sanketdes/order-service
+    ports:
+      - "9092:9092"
+    networks:
+      - my-network
+    depends_on:
+      - eureka-server
+    environment:
+      - server.port=9092
+      - eureka.client.serviceUrl.defaultZone=http://eureka-server:8761/eureka/
+      - eureka.instance.hostname=order-service
+      - restaurant.endpoint=http://restaurant-service:9091/api/restaurants/
+      - user-service=http://user-service:9090/api/users/
+
+  payment-service:
+    image: docker.io/sanketdes/payment-service
+    ports:
+      - "9093:9093"
+    networks:
+      - my-network
+    depends_on:
+      - eureka-server
+    environment:
+      - server.port=9093
+      - eureka.client.serviceUrl.defaultZone=http://eureka-server:8761/eureka/
+      - eureka.instance.hostname=payment-service
+      - order.endpoint=http://order-service:9092/api/orders/
+
+networks:
+  my-network:
+    driver: bridge

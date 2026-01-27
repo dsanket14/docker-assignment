@@ -1,0 +1,7 @@
+FROM amazoncorretto:17.0.10-al2023
+WORKDIR /app
+LABEL container.name="user-service"
+COPY target/User-0.0.2.jar /app/User-0.0.2-SNAPSHOT.jar
+ENTRYPOINT ["java", "-jar", "/app/User-0.0.2-SNAPSHOT.jar"]
+EXPOSE 9090
+

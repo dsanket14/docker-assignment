@@ -1,0 +1,7 @@
+FROM amazoncorretto:17.0.10-al2023
+WORKDIR /app
+LABEL container.name="restaurant-service"
+COPY target/Restaurant-0.0.1-SNAPSHOT.jar .
+EXPOSE 9091
+ENTRYPOINT ["java", "-jar", "Restaurant-0.0.1-SNAPSHOT.jar"]
+

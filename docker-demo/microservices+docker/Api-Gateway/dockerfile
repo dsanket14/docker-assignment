@@ -1,0 +1,6 @@
+FROM amazoncorretto:17.0.10-al2023
+WORKDIR /app
+LABEL container.name="api-gateway"
+COPY target/api-gateway-0.0.2-SNAPSHOT.jar /tmp/api-gateway-0.0.2-SNAPSHOT.jar
+ENTRYPOINT ["java", "-jar", "/tmp/api-gateway-0.0.2-SNAPSHOT.jar"]
+EXPOSE 9191

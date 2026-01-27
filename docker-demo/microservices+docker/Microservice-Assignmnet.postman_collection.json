@@ -1,0 +1,869 @@
+{
+	"info": {
+		"_postman_id": "bb3ec89d-a6bc-4332-909d-f6d5bd844c54",
+		"name": "Microservice-Assignmnet",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29226011"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "resigtration",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYW5rZXQiLCJpYXQiOjE3MTA1NTc1MDIsImV4cCI6MTcxMDU2MTEwMn0.F0WtfwEeX_ngZD-JQFakqWt_mEM-P4EzSpAB6y0qhQkmSEHOqqxdDOjx2irZw2hdMH80MsFzaD1ZNB6qq779Tg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "password",
+								"value": "Test12345_",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"deshmukh\",\n    \"password\": \"sanket123\",\n    \"phone\":\"7798892075\",\n    \"mailId\":\"dsanket188@gmail.com\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:9191/api/users/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9191",
+							"path": [
+								"api",
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI5OTk4ODg3Nzc2IiwiaWF0IjoxNzEwMTg1NTU3LCJleHAiOjE3MTAxODkxNTd9.VrJvmJYVZ9kX0Rqz6eLmBmlOg2GNU8fagSkCNT-cquVd_4hDiE0AAsIbH-MKAd4YCAHVW1oGJAG6A4dKkDMsBA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\":\"tester\",\r\n    \"username\":\"9998887771\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUserById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYW5rZXQiLCJpYXQiOjE3MTA1NTc1MDIsImV4cCI6MTcxMDU2MTEwMn0.F0WtfwEeX_ngZD-JQFakqWt_mEM-P4EzSpAB6y0qhQkmSEHOqqxdDOjx2irZw2hdMH80MsFzaD1ZNB6qq779Tg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9191/api/users/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9191",
+							"path": [
+								"api",
+								"users",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteByUserId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYW5rZXQiLCJpYXQiOjE3MTA1NTc1MDIsImV4cCI6MTcxMDU2MTEwMn0.F0WtfwEeX_ngZD-JQFakqWt_mEM-P4EzSpAB6y0qhQkmSEHOqqxdDOjx2irZw2hdMH80MsFzaD1ZNB6qq779Tg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9191/api/users/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9191",
+							"path": [
+								"api",
+								"users",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add-favourite",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYW5rZXQiLCJpYXQiOjE3MTA1NTc1MDIsImV4cCI6MTcxMDU2MTEwMn0.F0WtfwEeX_ngZD-JQFakqWt_mEM-P4EzSpAB6y0qhQkmSEHOqqxdDOjx2irZw2hdMH80MsFzaD1ZNB6qq779Tg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9191/api/users/add-favourite?userName=sanket&restaurant=NewPeacock",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9191",
+							"path": [
+								"api",
+								"users",
+								"add-favourite"
+							],
+							"query": [
+								{
+									"key": "userName",
+									"value": "sanket"
+								},
+								{
+									"key": "restaurant",
+									"value": "NewPeacock"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-favourite",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYW5rZXQiLCJpYXQiOjE3MTA1NTc1MDIsImV4cCI6MTcxMDU2MTEwMn0.F0WtfwEeX_ngZD-JQFakqWt_mEM-P4EzSpAB6y0qhQkmSEHOqqxdDOjx2irZw2hdMH80MsFzaD1ZNB6qq779Tg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9191/api/users/get-favourite",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9191",
+							"path": [
+								"api",
+								"users",
+								"get-favourite"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-fav-restaurant",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYW5rZXQiLCJpYXQiOjE3MTA1NTc1MDIsImV4cCI6MTcxMDU2MTEwMn0.F0WtfwEeX_ngZD-JQFakqWt_mEM-P4EzSpAB6y0qhQkmSEHOqqxdDOjx2irZw2hdMH80MsFzaD1ZNB6qq779Tg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9191/api/users/rmv-favourite/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9191",
+							"path": [
+								"api",
+								"users",
+								"rmv-favourite",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Restaurant",
+			"item": [
+				{
+					"name": "CreateRetro",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYW5rZXQiLCJpYXQiOjE3MTA1NTc1MDIsImV4cCI6MTcxMDU2MTEwMn0.F0WtfwEeX_ngZD-JQFakqWt_mEM-P4EzSpAB6y0qhQkmSEHOqqxdDOjx2irZw2hdMH80MsFzaD1ZNB6qq779Tg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"New Peacock\",\n    \"address\": \"123 Main St\",\n    \"operatingHours\": \"9am - 10pm\",\n    \"mailId\": \"myvisa1998@gmail.com\",\n    \"menuList\": [\n        {\n            \"restaurantName\": \"NewPeacock\",\n            \"foodName\": \"Pizza\",\n            \"price\": 15.0\n        },\n       {\n            \"restaurantName\": \"NewPeacock\",\n            \"foodName\": \"Berger\",\n            \"price\": 10.0\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "http://localhost:9191/api/restaurants",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9191",
+							"path": [
+								"api",
+								"restaurants"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteRestro",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/restaurants/{id}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"restaurants",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateRestro",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYW5rZXQiLCJpYXQiOjE3MTA1NTc1MDIsImV4cCI6MTcxMDU2MTEwMn0.F0WtfwEeX_ngZD-JQFakqWt_mEM-P4EzSpAB6y0qhQkmSEHOqqxdDOjx2irZw2hdMH80MsFzaD1ZNB6qq779Tg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"HotelRoyal\",\n    \"address\": \"456 Elm St road\",\n    \"operatingHours\": \"10am - 11pm\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:9191/api/restaurants/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9191",
+							"path": [
+								"api",
+								"restaurants",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getByRestaurantId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYW5rZXQiLCJpYXQiOjE3MTA1NTc1MDIsImV4cCI6MTcxMDU2MTEwMn0.F0WtfwEeX_ngZD-JQFakqWt_mEM-P4EzSpAB6y0qhQkmSEHOqqxdDOjx2irZw2hdMH80MsFzaD1ZNB6qq779Tg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9191/api/restaurants/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9191",
+							"path": [
+								"api",
+								"restaurants",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getByFoodName",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYW5rZXQiLCJpYXQiOjE3MTA1MTA1OTIsImV4cCI6MTcxMDUxNDE5Mn0.dTaUymg_lGMUFpAIghiSAJs0MjTOfW_EFQJ5_gg_-coyoBGVuS6V64wBa25hIiR6LmN9kTsXeBr75H-hPihzvQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9191/api/restaurants/foodname/Berger?foodName=Pizza",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9191",
+							"path": [
+								"api",
+								"restaurants",
+								"foodname",
+								"Berger"
+							],
+							"query": [
+								{
+									"key": "foodName",
+									"value": "Pizza"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getByrestaurantName",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYW5rZXQiLCJpYXQiOjE3MTA1NTc1MDIsImV4cCI6MTcxMDU2MTEwMn0.F0WtfwEeX_ngZD-JQFakqWt_mEM-P4EzSpAB6y0qhQkmSEHOqqxdDOjx2irZw2hdMH80MsFzaD1ZNB6qq779Tg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9191/api/restaurants/name/NewPeacock",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9191",
+							"path": [
+								"api",
+								"restaurants",
+								"name",
+								"NewPeacock"
+							],
+							"query": [
+								{
+									"key": "foodName",
+									"value": "Pizza",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getByrestaurantNameAndFoodName",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYW5rZXQiLCJpYXQiOjE3MTA1MTA1OTIsImV4cCI6MTcxMDUxNDE5Mn0.dTaUymg_lGMUFpAIghiSAJs0MjTOfW_EFQJ5_gg_-coyoBGVuS6V64wBa25hIiR6LmN9kTsXeBr75H-hPihzvQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9191/api/restaurants/name-food/NewPeacock/Pizza",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9191",
+							"path": [
+								"api",
+								"restaurants",
+								"name-food",
+								"NewPeacock",
+								"Pizza"
+							],
+							"query": [
+								{
+									"key": "foodName",
+									"value": "Pizza",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "CreateOrder",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYW5rZXQiLCJpYXQiOjE3MTA1MTA1OTIsImV4cCI6MTcxMDUxNDE5Mn0.dTaUymg_lGMUFpAIghiSAJs0MjTOfW_EFQJ5_gg_-coyoBGVuS6V64wBa25hIiR6LmN9kTsXeBr75H-hPihzvQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\":2,\n    \"restaurantId\": 1,\n    \"items\": [\n        {\n            \"itemId\": 1,\n            \"itemName\": \"Pizza\",\n            \"price\": 10.0,\n            \"quantity\": 2\n        },\n        {\n            \"itemId\": 2,\n            \"itemName\": \"Vadapav\",\n            \"price\": 15.0,\n            \"quantity\": 1\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "http://localhost:9191/api/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9191",
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getorderById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYW5rZXQiLCJpYXQiOjE3MTA1NTc1MDIsImV4cCI6MTcxMDU2MTEwMn0.F0WtfwEeX_ngZD-JQFakqWt_mEM-P4EzSpAB6y0qhQkmSEHOqqxdDOjx2irZw2hdMH80MsFzaD1ZNB6qq779Tg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9191/api/orders/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9191",
+							"path": [
+								"api",
+								"orders",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateOrderStaus",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYW5rZXQiLCJpYXQiOjE3MTA1NTc1MDIsImV4cCI6MTcxMDU2MTEwMn0.F0WtfwEeX_ngZD-JQFakqWt_mEM-P4EzSpAB6y0qhQkmSEHOqqxdDOjx2irZw2hdMH80MsFzaD1ZNB6qq779Tg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"status\": \"CONFIRMED\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:9191/api/orders/2/status?status=CONFIRMED",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9191",
+							"path": [
+								"api",
+								"orders",
+								"2",
+								"status"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "CONFIRMED"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteOrder",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYW5rZXQiLCJpYXQiOjE3MTA1MTQzMzIsImV4cCI6MTcxMDUxNzkzMn0.jUuKmN3YWIn-pasPnjq22Cpx_8Hh_HhGbssMPIJ-mrJ2sdteu4IbCJ-RfXVdIqy0ISW0M5j-y5HXGN1EOHoNEQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9191/api/orders/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9191",
+							"path": [
+								"api",
+								"orders",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Dining",
+			"item": [
+				{
+					"name": "DiningOrderCreate",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYW5rZXQiLCJpYXQiOjE3MTA1NTc1MDIsImV4cCI6MTcxMDU2MTEwMn0.F0WtfwEeX_ngZD-JQFakqWt_mEM-P4EzSpAB6y0qhQkmSEHOqqxdDOjx2irZw2hdMH80MsFzaD1ZNB6qq779Tg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": 1,\r\n    \"restaurantId\": 2,\r\n    \"timeSlot\": \"2024-03-16 18:00:00\",\r\n    \"noOfPeople\": 4\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:9191/api/dining",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9191",
+							"path": [
+								"api",
+								"dining"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYW5rZXQiLCJpYXQiOjE3MTA1NTc1MDIsImV4cCI6MTcxMDU2MTEwMn0.F0WtfwEeX_ngZD-JQFakqWt_mEM-P4EzSpAB6y0qhQkmSEHOqqxdDOjx2irZw2hdMH80MsFzaD1ZNB6qq779Tg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9191/api/dining/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9191",
+							"path": [
+								"api",
+								"dining",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateStatus",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYW5rZXQiLCJpYXQiOjE3MTA1NTc1MDIsImV4cCI6MTcxMDU2MTEwMn0.F0WtfwEeX_ngZD-JQFakqWt_mEM-P4EzSpAB6y0qhQkmSEHOqqxdDOjx2irZw2hdMH80MsFzaD1ZNB6qq779Tg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "status",
+									"value": "CONFIRMED",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:9191/api/dining/1/status",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9191",
+							"path": [
+								"api",
+								"dining",
+								"1",
+								"status"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Payment",
+			"item": [
+				{
+					"name": "makePyment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYW5rZXQiLCJpYXQiOjE3MTA1NTc1MDIsImV4cCI6MTcxMDU2MTEwMn0.F0WtfwEeX_ngZD-JQFakqWt_mEM-P4EzSpAB6y0qhQkmSEHOqqxdDOjx2irZw2hdMH80MsFzaD1ZNB6qq779Tg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"orderId\": 1,\n    \"status\": \"PAYMENT RECIVED\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:9191/api/payment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9191",
+							"path": [
+								"api",
+								"payment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getPaymentStatus",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYW5rZXQiLCJpYXQiOjE3MTA1NTc1MDIsImV4cCI6MTcxMDU2MTEwMn0.F0WtfwEeX_ngZD-JQFakqWt_mEM-P4EzSpAB6y0qhQkmSEHOqqxdDOjx2irZw2hdMH80MsFzaD1ZNB6qq779Tg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9191/api/payment/status?orderId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9191",
+							"path": [
+								"api",
+								"payment",
+								"status"
+							],
+							"query": [
+								{
+									"key": "orderId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

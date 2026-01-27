@@ -1,0 +1,5 @@
+FROM amazoncorretto:17.0.10-al2023
+WORKDIR /app
+COPY target/service-registry-0.0.2-SNAPSHOT.jar /app/service-registry-0.0.2-SNAPSHOT.jar
+ENTRYPOINT ["java", "-jar", "/app/service-registry-0.0.2-SNAPSHOT.jar"]
+EXPOSE 8761

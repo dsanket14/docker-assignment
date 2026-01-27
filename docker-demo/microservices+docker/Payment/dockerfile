@@ -1,0 +1,6 @@
+FROM amazoncorretto:17.0.10-al2023
+WORKDIR /app
+LABEL container.name="payment-service"
+COPY target/Payment-0.0.1-SNAPSHOT.jar /app/Payment-0.0.1-SNAPSHOT.jar
+ENTRYPOINT ["java", "-jar", "/app/Payment-0.0.1-SNAPSHOT.jar"]
+EXPOSE 9093
